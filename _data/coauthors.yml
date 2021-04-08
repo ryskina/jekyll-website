@@ -1,8 +1,14 @@
-Adams:
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+Berg-Kirkpatrick:
+    url: http://cseweb.ucsd.edu/~tberg/
 
-Podolsky:
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+Gormley:
+    url: http://www.cs.cmu.edu/~mgormley/
 
-Rosen:
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+Hovy:
+    url: http://www.cs.cmu.edu/~hovy/
+    
+Ravichander:
+    url: https://www.cs.cmu.edu/~aravicha/
+    
+Dalmia:
+    url: https://www.cs.cmu.edu/~sdalmia/
