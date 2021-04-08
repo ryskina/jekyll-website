@@ -40,6 +40,12 @@ a, table.table a {
   color: var(--global-theme-color);
 }
 
+
+// Description (IPA handling)
+.desc {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 // Profile
 
 .profile {
