@@ -4,6 +4,10 @@
 
 // Typography
 
+p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
+  color: var(--global-text-color);
+}
+
 a, table.table a {
   color: var(--global-theme-color);
   &:hover {
@@ -31,6 +35,10 @@ a, table.table a {
   text-align: center;
 }
 
+// Citation
+.citation, .citation-number {
+  color: var(--global-theme-color);
+}
 
 // Profile
 
@@ -61,9 +69,9 @@ a, table.table a {
 
 .post-description {
   margin-bottom: 2rem;
+  font-size: 0.875rem;
   a {
     color: inherit;
-    font-size: 0.875rem;
     &:hover {
       color: var(--global-theme-color);
       text-decoration: none;
@@ -77,11 +85,10 @@ a, table.table a {
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid $grey-color-light;
-  opacity: 0.95;
   background-color: var(--global-bg-color);
+  opacity: 0.95;
 }
 .navbar.navbar-light {
-  // Remove link decoration
   a {
     &:hover {
       text-decoration: none;
@@ -91,6 +98,7 @@ a, table.table a {
     color: var(--global-text-color);
   }
   .navbar-nav .nav-item .nav-link {
+    color: var(--global-text-color);
     &:hover {
       color: var(--global-hover-color);
     }
@@ -103,11 +111,19 @@ a, table.table a {
         color: var(--global-hover-color);
       }
   }
-  .contact-icon {
-    font-size: 2rem;
+  .navbar-brand.social {
+    padding-bottom: 0;
+    padding-top: 0;
+    font-size: 1.7rem;
     a {
+      i::before {
+        color: var(--global-text-color);
+        -webkit-transition: all 0.2s ease-in-out;
+      }
       &:hover {
-        color: var(--global-hover-color);
+        i::before {
+          color: var(--global-theme-color);
+        }
       }
     }
   }
@@ -118,7 +134,7 @@ a, table.table a {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: $grey-color-dark;
+    background-color: var(--global-text-color);
     border-radius: 1px;
     margin-bottom: 4px;
     transition: all 0.2s;
@@ -164,12 +180,17 @@ a, table.table a {
 
 .social {
   text-align: center;
-  .contact-icon {
+  .contact-icons {
     font-size: 4rem;
     a {
-      color: var(--global-icon-color);
+      i::before {
+        color: var(--global-text-color);
+        -webkit-transition: all 0.2s ease-in-out;
+      }
       &:hover {
-        color: var(--global-theme-color);
+        i::before {
+          color: var(--global-theme-color);
+        }
       }
     }
   }
@@ -181,17 +202,17 @@ a, table.table a {
 
 // Footer
 footer.fixed-bottom {
-  color: var(--global-footer-text-color);
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
   .container {
+    color: var(--global-footer-text-color);
     padding-top: 9px;
     padding-bottom: 8px;
   }
   a {
     color: var(--global-footer-link-color);
     &:hover {
-      color: pink;
+      color: var(--global-theme-color);
       text-decoration: none;
     }
   }
@@ -228,7 +249,7 @@ footer.sticky-bottom {
     padding-top: 2rem;
     padding-bottom: 2rem;
     .post-meta {
-      color: $grey-color;
+      color: var(--global-text-color-light);
       font-size: 0.875rem;
       margin-bottom: 0;
     }
@@ -242,10 +263,20 @@ footer.sticky-bottom {
   }
 }
 
-.pagination .page-item.active .page-link {
-  background-color: var(--global-theme-color);
-  &:hover {
-    background-color: var(--global-theme-color);
+.pagination {
+  .page-item {
+    .page-link {
+      color: var(--global-text-color);
+      &:hover {
+        color: $black-color;
+      }
+    }
+    &.active .page-link {
+      background-color: var(--global-theme-color);
+      &:hover {
+        background-color: var(--global-theme-color);
+      }
+    }
   }
 }
 
@@ -274,8 +305,13 @@ footer.sticky-bottom {
       }
     }
   }
-  .card img {
-    width: 100%;
+  .card { 
+    img {
+      width: 100%;
+    }
+    .card-title {
+      color: $black-color;
+    }
   }
 }
 
@@ -392,19 +428,40 @@ footer.sticky-bottom {
         transition: all 0.15s ease;
       }
       div.abstract.hidden {
-        border: dashed 1px white;
+        border: dashed 1px var(--global-bg-color);
       }
       div.abstract.hidden.open {
-        border-color: $grey-color;
+        border-color: var(--global-text-color);
       }
     }
   }
 }
 
 // Rouge Color Customization
+figure.highlight {
+  margin: 0 0 1rem;
+}
+
+pre {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+  pre, code {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
 code {
   color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 3px;
+  padding: 3px 3px;
 }
+
+
 // Transitioning Themes
 html.transition,
 html.transition *,
